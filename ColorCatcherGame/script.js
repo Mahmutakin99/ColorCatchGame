@@ -57,7 +57,7 @@ function updateBalls() {
     const ball = balls[i];
     ball.y += ball.speed;
 
-    // Collision check
+
     if (
       ball.y + ball.radius >= catcher.y &&
       ball.x >= catcher.x &&
@@ -72,7 +72,7 @@ function updateBalls() {
       continue;
     }
 
-    // Remove if off screen
+
     if (ball.y - ball.radius > canvas.height) {
       balls.splice(i, 1);
     }
@@ -124,7 +124,6 @@ let timerInterval = setInterval(() => {
     alert(`Game over! Your score: ${score}`);
   }
 
-  // Increase difficulty over time
   if (timeLeft % 10 === 0 && timeLeft !== 90) {
     ballSpeed += 0.5;
     if (spawnRate > 300) {
@@ -134,7 +133,6 @@ let timerInterval = setInterval(() => {
     }
   }
 
-  // Change target color every 8 seconds (daha uzun yaptık)
   if ((90 - timeLeft) % 8 === 0) {
     let newColor;
     do {
